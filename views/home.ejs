@@ -1,3 +1,25 @@
 <% layout('layouts/boilerplate') %>
-
-    <h1>Home!!</h1>
+    <div class="d-flex justify-content-center align-items-center vh-80">
+        <div class="card shadow px-3" id="card-home">
+            <div class="card-body">
+                <h5 class="card-title text-center">ログイン</h5>
+                <form action="">
+                    <section class="mb-3 d-flex">
+                        <!-- <label for="user-name"
+                            class="form-label text-nowrap mb-0 d-flex align-items-center">ユーザーネーム：</label> -->
+                        <input type="text" id="user-name" name="user-name" class="form-control input-blur input-text"
+                            placeholder="User Name">
+                    </section>
+                    <section class="mb-3 d-flex">
+                        <!-- <label for="password"
+                            class="form-label text-nowrap mb-0 d-flex align-items-center">パスワード：</label> -->
+                        <input type="password" id="password" name="password" class="form-control input-blur input-text"
+                            placeholder="Password">
+                    </section>
+                    <section class="d-flex justify-content-center">
+                        <button class="btn" id="btn-home">Log In</button>
+                    </section>
+                </form>
+            </div>
+        </div>
+    </div>
