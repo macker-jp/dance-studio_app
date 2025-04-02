@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const path = require('path');
 const ejsMate = require('ejs-mate');
+const DanceStudio = require('../models/danceStudio');
 
 
 const app = express();
@@ -30,6 +31,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/danceStudio',
 
 app.get('/', (req, res) => {
     res.render('home');
+});
+
+app.get('/dancestudios', async (req, res) => {
+    const danceStudios = await DanceStudio.find({});
+    res.render('danceStudios/index', { danceStudios });
 });
 
 app.listen(4000, () => {

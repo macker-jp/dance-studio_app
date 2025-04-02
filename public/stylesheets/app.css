@@ -74,3 +74,31 @@ button:hover {
 .input-text {
     color: white;
 }
+
+/* dance studio */
+.white {
+    color: white;
+}
+
+.title-font {
+    font-family: "Rampart One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.7em;
+    border-bottom: 2px solid #7d7846;
+    /* background: linear-gradient(transparent 95%, #7d7846 60%); */
+    display: inline-block;
+    padding-bottom: 7px;
+    transition: border-bottom-width 0.1s ease-in-out, opacity 0.1s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.title-font:hover {
+    border-bottom-width: 0px;
+    opacity: 0.7;
+}
+
+.card-dancestudio {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+}
