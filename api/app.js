@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const DanceStudio = require('../models/danceStudio');
+require('dotenv').config();
+const DB_URL = process.env.mongo_atlas_url;
 
 
 const app = express();
@@ -13,7 +15,8 @@ app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
 
-mongoose.connect('mongodb://127.0.0.1:27017/danceStudio',
+// mongodb://127.0.0.1:27017/danceStudio
+mongoose.connect(DB_URL,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
