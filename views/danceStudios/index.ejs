@@ -32,7 +32,7 @@
         </div>
         <% } %>
             <script>
-                const mapToken = '<%= process.env.MAPBOX_TOKEN %>'
+                const mapToken = '<%= process.env.NEXT_PUBLIC_MAPBOX_TOKEN %>'
                 const danceStudios = <%- JSON.stringify(danceStudios) %>
             </script>
             <script src="/javascripts/mapbox.js"></script>
