@@ -32,11 +32,6 @@
         </div>
         <% } %>
             <script>
-                mapboxgl.accessToken = 'pk.eyJ1IjoibWFja2VyLWpwIiwiYSI6ImNtOGxhZDAwZTAzZGQyam9odGl0cmQycnkifQ.3YVfwvocfKUqx_8-Elysuw';
-                const map = new mapboxgl.Map({
-                    container: 'map', // container ID
-                    style: 'mapbox://styles/mapbox/streets-v12', // style URL
-                    center: [-74.5, 40], // starting position [lng, lat]
-                    zoom: 9, // starting zoom
-                });
+                const mapToken = '<%= process.env.MAPBOX_TOKEN %>'
             </script>
+            <script src="/javascripts/mapbox.js"></script>
