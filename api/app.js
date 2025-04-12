@@ -4,7 +4,7 @@ const path = require('path');
 const ejsMate = require('ejs-mate');
 const DanceStudio = require('../models/danceStudio');
 require('dotenv').config();
-const DB_URL = process.env.mongo_atlas_url;
+const DB_URL = process.env.MONGODB_URI;
 
 
 const app = express();
