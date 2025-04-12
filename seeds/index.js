@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 const danceStudios = require('./danceStudios');
 const DanceStudio = require('../models/danceStudio');
+require('dotenv').config();
+const DB_URL = process.env.MONGODB_URI;
+// 'mongodb://127.0.0.1:27017/danceStudio'
 
-mongoose.connect('mongodb://127.0.0.1:27017/danceStudio',
+mongoose.connect(DB_URL,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
