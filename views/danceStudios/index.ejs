@@ -33,5 +33,6 @@
         <% } %>
             <script>
                 const mapToken = '<%= process.env.MAPBOX_TOKEN %>'
+                const danceStudios = <%- JSON.stringify(danceStudios) %>
             </script>
             <script src="/javascripts/mapbox.js"></script>

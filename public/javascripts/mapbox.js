@@ -2,7 +2,7 @@ mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v12',
-    center: [139, 37.5],
+    center: [139.767125, 35.681236],
     zoom: 9,
 });
 
@@ -14,7 +14,9 @@ map.on('load', () => {
         type: 'geojson',
         // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
         // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
-        data: 'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson',
+        data: {
+            features: danceStudios
+        },
         cluster: true,
         clusterMaxZoom: 14, // Max zoom to cluster points on
         clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
@@ -102,9 +104,6 @@ map.on('load', () => {
     // description HTML from its properties.
     map.on('click', 'unclustered-point', (e) => {
         const coordinates = e.features[0].geometry.coordinates.slice();
-        const mag = e.features[0].properties.mag;
-        const tsunami =
-            e.features[0].properties.tsunami === 1 ? 'yes' : 'no';
 
         // Ensure that if the map is zoomed out such that
         // multiple copies of the feature are visible, the
@@ -118,7 +117,7 @@ map.on('load', () => {
         new mapboxgl.Popup()
             .setLngLat(coordinates)
             .setHTML(
-                `magnitude: ${mag}<br>Was there a tsunami?: ${tsunami}`
+                "ダンススタジオ"
             )
             .addTo(map);
     });
