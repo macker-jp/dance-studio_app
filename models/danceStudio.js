@@ -10,6 +10,17 @@ const danceStudioSchema = new Schema({
     name: String,
     description: String,
     location: String,
+    geometry: {
+        type: {
+            type: String,
+            enum: ['Point'],
+            required: true
+        },
+        coordinates: {
+            type: [Number],
+            required: true
+        }
+    },
     images: [image]
 });
 

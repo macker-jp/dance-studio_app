@@ -1,4 +1,9 @@
 <% layout('layouts/boilerplate') %>
+    <section class="d-flex justify-content-center mx-5 row">
+        <div class="col-md-8">
+            <div id='map' style="height: 350px;"></div>
+        </div>
+    </section>
     <h1 class="white title-font">スタジオ一覧</h1>
     <% for(let dancestudio of danceStudios){ %>
         <div class="card card-dancestudio mb-3">
@@ -26,3 +31,8 @@
             </div>
         </div>
         <% } %>
+            <script>
+                const mapToken = '<%= process.env.NEXT_PUBLIC_MAPBOX_TOKEN %>'
+                const danceStudios = <%- JSON.stringify(danceStudios) %>
+            </script>
+            <script src="/javascripts/mapbox.js"></script>
