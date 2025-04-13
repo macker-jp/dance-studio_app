@@ -5,11 +5,41 @@ const ejsMate = require('ejs-mate');
 const DanceStudio = require('../models/danceStudio');
 require('dotenv').config();
 const DB_URL = process.env.MONGODB_URI;
+const session = require('express-session');
+const flash = require('connect-flash');
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
+const User = require('../models/user');
 
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, "../public")));
+
+const sessionConfig = {
+    secret: "mysecret",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 * 7,
+        httpOnly: true
+    }
+};
+app.use(session(sessionConfig));
+app.use(flash());
+
+app.use(express.urlencoded({ extended: false }));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+app.use((req, res, next) => {
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
+    next();
+})
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
