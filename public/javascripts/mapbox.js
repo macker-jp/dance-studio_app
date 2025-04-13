@@ -37,19 +37,19 @@ map.on('load', () => {
                 'step',
                 ['get', 'point_count'],
                 '#51bbd6',
-                100,
+                5,
                 '#f1f075',
-                750,
+                10,
                 '#f28cb1'
             ],
             'circle-radius': [
                 'step',
                 ['get', 'point_count'],
                 20,
-                100,
-                30,
-                750,
-                40
+                5,
+                25,
+                10,
+                30
             ]
         }
     });
@@ -73,7 +73,7 @@ map.on('load', () => {
         filter: ['!', ['has', 'point_count']],
         paint: {
             'circle-color': '#11b4da',
-            'circle-radius': 4,
+            'circle-radius': 8,
             'circle-stroke-width': 1,
             'circle-stroke-color': '#fff'
         }
@@ -104,7 +104,8 @@ map.on('load', () => {
     // description HTML from its properties.
     map.on('click', 'unclustered-point', (e) => {
         const coordinates = e.features[0].geometry.coordinates.slice();
-
+        console.log(e.features[0]);
+        const { popupMarkup } = e.features[0].properties;
         // Ensure that if the map is zoomed out such that
         // multiple copies of the feature are visible, the
         // popup appears over the copy being pointed to.
@@ -117,8 +118,9 @@ map.on('load', () => {
         new mapboxgl.Popup()
             .setLngLat(coordinates)
             .setHTML(
-                "ダンススタジオ"
+                popupMarkup
             )
+            .addClassName('custom-popup')
             .addTo(map);
     });
 
