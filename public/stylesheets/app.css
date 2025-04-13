@@ -86,7 +86,6 @@ button:hover {
     font-style: normal;
     font-size: 1.7em;
     border-bottom: 2px solid #7d7846;
-    /* background: linear-gradient(transparent 95%, #7d7846 60%); */
     display: inline-block;
     padding-bottom: 7px;
     transition: border-bottom-width 0.1s ease-in-out, opacity 0.1s ease-in-out;
@@ -101,4 +100,14 @@ button:hover {
 .card-dancestudio {
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
+}
+
+.btn-purple {
+    background-color: rgb(160, 141, 183);
+    color: white;
+    max-width: 90px;
+}
+
+.btn-purple:hover {
+    background-color: rgb(143, 120, 171);
 }
