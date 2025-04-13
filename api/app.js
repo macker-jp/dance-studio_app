@@ -40,6 +40,11 @@ app.get('/dancestudios', async (req, res) => {
     const danceStudios = await DanceStudio.find({});
     res.render('danceStudios/index', { danceStudios });
 });
+app.get('/dancestudios/:id', async (req, res) => {
+    const { id } = req.params;
+    const danceStudio = await DanceStudio.findById(id);
+    res.render('danceStudios/show', { danceStudio });
+});
 
 app.listen(4000, () => {
     console.log(`ポート4000でリクエスト待受中...`);

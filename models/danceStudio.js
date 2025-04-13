@@ -6,6 +6,7 @@ const image = new Schema({
     file_name: String
 });
 
+const opts = { toJSON: { virtuals: true } };
 const danceStudioSchema = new Schema({
     name: String,
     description: String,
@@ -22,6 +23,10 @@ const danceStudioSchema = new Schema({
         }
     },
     images: [image]
+}, opts);
+
+danceStudioSchema.virtual('properties.popupMarkup').get(function () {
+    return `<h5 class="fs-6">${this.name}</h5><a href="dancestudios/${this._id}">詳細</a>`;
 });
 
 module.exports = mongoose.model('DanceStudio', danceStudioSchema);

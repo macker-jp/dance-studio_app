@@ -86,7 +86,6 @@ button:hover {
     font-style: normal;
     font-size: 1.7em;
     border-bottom: 2px solid #7d7846;
-    /* background: linear-gradient(transparent 95%, #7d7846 60%); */
     display: inline-block;
     padding-bottom: 7px;
     transition: border-bottom-width 0.1s ease-in-out, opacity 0.1s ease-in-out;
@@ -101,4 +100,76 @@ button:hover {
 .card-dancestudio {
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
+}
+
+.btn-purple {
+    background-color: rgb(160, 141, 183);
+    color: white;
+    max-width: 90px;
+}
+
+.btn-purple:hover {
+    background-color: rgb(143, 120, 171);
+}
+
+/* map */
+.custom-popup {
+    color: white;
+}
+
+.custom-popup .mapboxgl-popup-content {
+    background-color: #51bbd6;
+    box-shadow: 6px 6px 6px rgba(1, 1, 1, .4);
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+    align-self: center;
+    border-bottom: none;
+    border-top-color: #51bbd6;
+}
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+    align-self: center;
+    border-top: none;
+    border-bottom-color: #51bbd6;
+}
+
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+    align-self: center;
+    border-left: none;
+    border-right-color: #51bbd6;
+}
+
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+    align-self: center;
+    border-right: none;
+    border-left-color: #51bbd6;
+}
+
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip {
+    align-self: flex-start;
+    border-top: none;
+    border-left: none;
+    border-bottom-color: #51bbd6;
+}
+
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+    align-self: flex-end;
+    border-top: none;
+    border-right: none;
+    border-bottom-color: #51bbd6;
+}
+
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+    align-self: flex-end;
+    border-bottom: none;
+    border-right: none;
+    border-top-color: #51bbd6;
+}
+
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip {
+    align-self: flex-start;
+    border-bottom: none;
+    border-left: none;
+    border-top-color: #51bbd6;
 }
