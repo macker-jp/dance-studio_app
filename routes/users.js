@@ -11,7 +11,7 @@ router.post('/register', async (req, res) => {
   const { username, password } = req.body;
   const user = new User({ username });
   const newuser = await User.register(user, password);
-  console.log(newuser);
+  req.flash('success', 'DanSearchへようこそ！');
   res.redirect('/dancestudios');
 });
 
@@ -20,6 +20,7 @@ router.get('/login', (req, res) => {
 });
 
 router.post('/login', passport.authenticate('local', { failureFlash: true, failureRedirect: '/users/login' }), (req, res) => {
+  req.flash('success', 'おかえりなさい！');
   res.redirect('/dancestudios');
 });
 
