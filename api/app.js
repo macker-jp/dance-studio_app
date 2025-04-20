@@ -67,7 +67,7 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.use('/danceStudios', dancestudioRoutes);
+app.use('/dancestudios', dancestudioRoutes);
 app.use('/users', userRoutes);
 
 app.listen(4000, () => {
