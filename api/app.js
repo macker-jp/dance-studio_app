@@ -2,14 +2,15 @@ const mongoose = require('mongoose');
 const express = require('express');
 const path = require('path');
 const ejsMate = require('ejs-mate');
-const DanceStudio = require('../models/danceStudio');
+const dancestudioRoutes = require('../routes/dancestudios');
+const User = require('../models/user');
+const userRoutes = require('../routes/users');
 require('dotenv').config();
 const DB_URL = process.env.MONGODB_URI;
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-const User = require('../models/user');
 
 
 const app = express();
@@ -66,15 +67,8 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.get('/dancestudios', async (req, res) => {
-    const danceStudios = await DanceStudio.find({});
-    res.render('danceStudios/index', { danceStudios });
-});
-app.get('/dancestudios/:id', async (req, res) => {
-    const { id } = req.params;
-    const danceStudio = await DanceStudio.findById(id);
-    res.render('danceStudios/show', { danceStudio });
-});
+app.use('/danceStudios', dancestudioRoutes);
+app.use('/users', userRoutes);
 
 app.listen(4000, () => {
     console.log(`ポート4000でリクエスト待受中...`);
