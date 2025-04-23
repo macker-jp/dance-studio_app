@@ -1,39 +1,39 @@
 <% layout('layouts/boilerplate') %>
-    <section class="d-flex justify-content-center mx-5 row">
+  <section class="d-flex justify-content-center mx-5 row">
+    <div class="col-md-8">
+      <div id='map' style="height: 350px;"></div>
+    </div>
+  </section>
+  <h1 class="white title-font">スタジオ一覧</h1>
+  <% for(let dancestudio of danceStudios){ %>
+    <div class="card card-dancestudio mb-3">
+      <div class="row">
+        <div class="col-md-4">
+          <% if(dancestudio.images && dancestudio.images.length){ %>
+            <img class="img-fluid" src="<%= dancestudio.images[0].url %>" alt="">
+            <% } %>
+        </div>
         <div class="col-md-8">
-            <div id='map' style="height: 350px;"></div>
+          <div class="card-body d-flex flex-column h-100">
+            <h5 class="card-title">
+              <%= dancestudio.name %>
+            </h5>
+            <p class="card-text">
+              <small class="text-muted">
+                <%= dancestudio.location %>
+              </small>
+            </p>
+            <p class="card-text">
+              <%= dancestudio.description %>
+            </p>
+            <a href="/dancestudios/<%= dancestudio._id %>" class="btn btn-purple fw-light mt-auto ml-3">スタジオへ</a>
+          </div>
         </div>
-    </section>
-    <h1 class="white title-font">スタジオ一覧</h1>
-    <% for(let dancestudio of danceStudios){ %>
-        <div class="card card-dancestudio mb-3">
-            <div class="row">
-                <div class="col-md-4">
-                    <% if(dancestudio.images && dancestudio.images.length){ %>
-                        <img class="img-fluid" src="<%= dancestudio.images[0].url %>" alt="">
-                        <% } %>
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body d-flex flex-column h-100">
-                        <h5 class="card-title">
-                            <%= dancestudio.name %>
-                        </h5>
-                        <p class="card-text">
-                            <small class="text-muted">
-                                <%= dancestudio.location %>
-                            </small>
-                        </p>
-                        <p class="card-text">
-                            <%= dancestudio.description %>
-                        </p>
-                        <a href="/dancestudios/<%= dancestudio._id %>" class="btn btn-purple fw-light mt-auto ml-3">スタジオへ</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <% } %>
-            <script>
-                const mapToken = '<%= process.env.NEXT_PUBLIC_MAPBOX_TOKEN %>'
-                const danceStudios = <%- JSON.stringify(danceStudios) %>
-            </script>
-            <script src="/javascripts/mapbox.js"></script>
+      </div>
+    </div>
+    <% } %>
+      <script>
+        const mapToken = '<%= process.env.NEXT_PUBLIC_MAPBOX_TOKEN %>'
+        const danceStudios = <%- JSON.stringify(danceStudios) %>
+      </script>
+      <script src="/javascripts/mapbox.js"></script>

@@ -1,0 +1,16 @@
+const express = require('express');
+const router = express.Router();
+const DanceStudio = require('../models/danceStudio');
+const { isLoggedIn } = require('../middleware');
+
+router.get('/', isLoggedIn, async (req, res) => {
+  const danceStudios = await DanceStudio.find({});
+  res.render('danceStudios/index', { danceStudios });
+});
+router.get('/:id', async (req, res) => {
+  const { id } = req.params;
+  const danceStudio = await DanceStudio.findById(id);
+  res.render('danceStudios/show', { danceStudio });
+});
+
+module.exports = router;

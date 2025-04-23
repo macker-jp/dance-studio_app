@@ -1,16 +1,20 @@
 <nav class="navbar navbar-expand-lg py-0 mb-3">
-    <div class="container-fluid">
-        <a class="navbar-brand mylogo" href="/">DanCerch</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-                <a class="nav-link" href="/dancestudios">スタジオを探す</a>
-                <a class="nav-link" href="#">ログアウト</a>
-            </div>
-        </div>
+  <div class="container-fluid">
+    <a class="navbar-brand mylogo" href="/">DanCearch</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <a class="nav-link" href="/dancestudios">スタジオを探す</a>
+        <% if(!currentUser) { %>
+          <a class="nav-link" href="/users/login">ログイン</a>
+        <% } else { %>
+          <a class="nav-link" href="/users/logout">ログアウト</a>
+        <% } %>
+      </div>
     </div>
+  </div>
 </nav>
