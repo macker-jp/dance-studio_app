@@ -24,4 +24,11 @@ router.post('/login', passport.authenticate('local', { failureFlash: true, failu
   res.redirect('/dancestudios');
 });
 
+router.get('/logout', (req, res) => {
+  req.logout((err) => {
+    req.flash('success', 'ログアウトしました');
+    res.redirect('/');
+  });
+});
+
 module.exports = router;
