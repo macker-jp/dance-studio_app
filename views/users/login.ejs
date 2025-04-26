@@ -1,24 +1,22 @@
 <% layout('layouts/boilerplate') %>
-  <div class="d-flex justify-content-center align-items-center vh-80">
-    <div class="card shadow px-3" id="card-home">
-      <div class="card-body">
-        <h5 class="card-title text-center">ログイン</h5>
-        <form action="/users/login" method="post">
-          <section class="mb-3 d-flex">
-            <input type="text" id="username" name="username" class="form-control input-blur input-text"
-              placeholder="User Name">
-          </section>
-          <section class="mb-3 d-flex">
-            <input type="password" id="password" name="password" class="form-control input-blur input-text"
-              placeholder="Password">
-          </section>
-          <section class="d-flex justify-content-center">
-            <button class="btn" id="btn-home">Log In</button>
-          </section>
-        </form>
-        <section class="d-flex">
-          <a href="/users/register" class="ms-auto">sign up?</a>
+<div class="d-flex justify-content-center align-items-center vh-80">
+  <div class="card shadow px-3" id="card-home">
+    <div class="card-body">
+      <h5 class="card-title text-center">ログイン</h5>
+      <form action="/users/login" method="post">
+        <section class="mb-3 d-flex">
+          <input type="text" id="username" name="username" class="form-control input-blur" placeholder="User Name">
         </section>
-      </div>
+        <section class="mb-3 d-flex">
+          <input type="password" id="password" name="password" class="form-control input-blur" placeholder="Password">
+        </section>
+        <section class="d-flex justify-content-center">
+          <button class="btn" id="btn-home">Log In</button>
+        </section>
+      </form>
+      <section class="d-flex">
+        <a href="/users/register" class="ms-auto">sign up?</a>
+      </section>
     </div>
   </div>
+</div>
