@@ -1,15 +1,20 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router({ mergeParams: true });
 const Review = require('../models/review');
 const { isLoggedIn } = require('../middleware');
-const danceStudio = require('../models/danceStudio');
+const Dancestudio = require('../models/danceStudio');
 
-router.get('/new', isLoggedIn, (req, res) => {
-  res.render('reviews/new');
+router.get('/new', isLoggedIn, async (req, res) => {
+  const dancestudio = await Dancestudio.findById(req.params.id);
+  if (!dancestudio) {
+    return res.status(404).send('ダンススタジオが見つかりません');
+  }
+  res.render('reviews/new', { dancestudio });
 });
 
-router.post('/', isLoggedIn, (req, res) => {
-  res.redirect('/dancestudios');
+router.post('/', isLoggedIn, async (req, res) => {
+  const dancestudio = await Dancestudio.findById(req.params.id);
+  res.redirect(`/dancestudios/${dancestudio._id}`);
 });
 
 module.exports = router;

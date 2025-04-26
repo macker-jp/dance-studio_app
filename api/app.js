@@ -71,7 +71,7 @@ app.get('/', (req, res) => {
 
 app.use('/dancestudios', dancestudioRoutes);
 app.use('/users', userRoutes);
-app.use('/reviews', reviewRoutes);
+app.use('/dancestudios/:id/reviews', reviewRoutes);
 
 app.listen(4000, () => {
     console.log(`ポート4000でリクエスト待受中...`);

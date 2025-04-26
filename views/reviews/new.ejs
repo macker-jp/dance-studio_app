@@ -3,7 +3,7 @@
   <div class="card card-review shadow w-100">
     <div class="card-body">
       <h5 class="card-title text-center">レビュー</h5>
-      <form action="/reviews" method="post">
+      <form action="/dancestudios/<%= dancestudio._id %>/reviews" method="post">
         <section class="mb-3 d-flex">
           <select class="form-select d-inline-block w-auto mb-3">
             <option value="1" selected>評価１</option>
