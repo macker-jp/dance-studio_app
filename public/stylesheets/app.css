@@ -105,7 +105,7 @@ button:hover {
 .btn-purple {
     background-color: rgb(160, 141, 183);
     color: white;
-    max-width: 90px;
+    width: fit-content;
 }
 
 .btn-purple:hover {
