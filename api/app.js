@@ -5,6 +5,7 @@ const ejsMate = require('ejs-mate');
 const dancestudioRoutes = require('../routes/dancestudios');
 const User = require('../models/user');
 const userRoutes = require('../routes/users');
+const reviewRoutes = require('../routes/reviews');
 require('dotenv').config();
 const DB_URL = process.env.MONGODB_URI;
 const session = require('express-session');
@@ -70,6 +71,7 @@ app.get('/', (req, res) => {
 
 app.use('/dancestudios', dancestudioRoutes);
 app.use('/users', userRoutes);
+app.use('/reviews', reviewRoutes);
 
 app.listen(4000, () => {
     console.log(`ポート4000でリクエスト待受中...`);

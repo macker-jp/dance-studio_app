@@ -1,0 +1,25 @@
+<% layout('layouts/boilerplate') %>
+<div class="d-flex justify-content-center align-items-center vh-80 col-md-6 offset-md-3">
+  <div class="card card-review shadow w-100">
+    <div class="card-body">
+      <h5 class="card-title text-center">レビュー</h5>
+      <form action="/reviews" method="post">
+        <section class="mb-3 d-flex">
+          <select class="form-select d-inline-block w-auto mb-3">
+            <option value="1" selected>評価１</option>
+            <option value="2">評価２</option>
+            <option value="3">評価３</option>
+            <option value="4">評価４</option>
+            <option value="5">評価５</option>
+          </select>
+        </section>
+        <section class="mb-3 d-flex">
+          <textarea rows="5" name="text" class="form-control" placeholder="レビューコメントを記入してください。"></textarea>
+        </section>
+        <section class="d-flex justify-content-center">
+          <button class="btn" id="btn-home">投稿する</button>
+        </section>
+      </form>
+    </div>
+  </div>
+</div>

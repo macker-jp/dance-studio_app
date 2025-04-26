@@ -170,3 +170,10 @@ button:hover {
     border-left: none;
     border-top-color: #51bbd6;
 }
+
+
+/* review */
+.card-review {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
