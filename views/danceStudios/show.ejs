@@ -39,7 +39,9 @@
               </div>
             </div>
             <form action="/dancestudios/<%= dancestudio._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button class="btn btn-danger">削除する</button>
+              <div class="d-flex">
+                <button class="btn btn-delete ms-auto">削除する</button>
+              </div>
             </form>
           </div>
         </div>
