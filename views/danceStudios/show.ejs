@@ -21,9 +21,29 @@
     <a href="/dancestudios" class="btn btn-purple fw-light mt-auto ml-3">一覧へ</a>
   </div>
   <div class="col-md-6 mb-4">
-    <section class="d-flex justify-content-between">
+    <section class="d-flex justify-content-between mb-3">
       <h2 class="text-white d-inline-block">レビュー一覧</h2>
       <a href="/dancestudios/<%= dancestudio._id %>/reviews/new" class="btn btn-purple fw-light mt-auto ml-3">レビューする</a>
+    </section>
+    <section>
+      <% for(let review of dancestudio.reviews){ %>
+        <div class="card card-review shadow w-100 my-2">
+          <div class="card-body">
+            <h3>UserName</h3>
+            <div class="d-flex">
+              <div class="col-3">
+                <p>評価：<%= review.rating %></p>
+              </div>
+              <div class="col-9">
+                <p><%= review.text %></p>
+              </div>
+            </div>
+            <form action="/dancestudios/<%= dancestudio._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+              <button class="btn btn-danger">削除する</button>
+            </form>
+          </div>
+        </div>
+      <% } %>
     </section>
   </div>
 </div>

@@ -9,7 +9,7 @@ router.get('/', isLoggedIn, async (req, res) => {
 });
 router.get('/:id', isLoggedIn, async (req, res) => {
   const { id } = req.params;
-  const dancestudio = await DanceStudio.findById(id);
+  const dancestudio = await DanceStudio.findById(id).populate('reviews');
   res.render('danceStudios/show', { dancestudio });
 });
 

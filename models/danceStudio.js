@@ -23,7 +23,11 @@ const danceStudioSchema = new Schema({
       required: true
     }
   },
-  images: [image]
+  images: [image],
+  reviews: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Review'
+  }]
 }, opts);
 
 danceStudioSchema.virtual('properties.popupMarkup').get(function () {
