@@ -5,12 +5,14 @@ const ejsMate = require('ejs-mate');
 const dancestudioRoutes = require('../routes/dancestudios');
 const User = require('../models/user');
 const userRoutes = require('../routes/users');
+const reviewRoutes = require('../routes/reviews');
 require('dotenv').config();
 const DB_URL = process.env.MONGODB_URI;
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
+const methodOverride = require('method-override');
 
 
 const app = express();
@@ -29,7 +31,8 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 app.use(flash());
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
@@ -70,6 +73,7 @@ app.get('/', (req, res) => {
 
 app.use('/dancestudios', dancestudioRoutes);
 app.use('/users', userRoutes);
+app.use('/dancestudios/:id/reviews', reviewRoutes);
 
 app.listen(4000, () => {
     console.log(`ポート4000でリクエスト待受中...`);

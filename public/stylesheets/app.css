@@ -1,175 +1,187 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .navbar-brand {
-    font-weight: 900;
-    color: rgb(37, 160, 160);
+  font-weight: 900;
+  color: rgb(37, 160, 160);
 }
 
 nav {
-    background-color: #646881;
+  background-color: #646881;
 }
 
 .nav-link:hover {
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 body {
-    background-image: url('/images/dance-studio.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url('/images/dance-studio.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .main-content {
-    flex: 1;
+  flex: 1;
 }
 
 footer {
-    background-color: #646881;
+  background-color: #646881;
 }
 
 .mylogo {
-    font-family: "Bytesized", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.8rem;
+  font-family: "Bytesized", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.8rem;
 }
 
 button {
-    transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 button:hover {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* home */
 .vh-80 {
-    height: 80vh;
+  height: 80vh;
 }
 
 #card-home {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 #btn-home {
-    background-color: #646881;
+  background-color: #646881;
 }
 
 .input-blur {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .input-blur:focus {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
-.input-text {
-    color: white;
-}
 
 /* dance studio */
 .white {
-    color: white;
+  color: white;
 }
 
 .title-font {
-    font-family: "Rampart One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.7em;
-    border-bottom: 2px solid #7d7846;
-    display: inline-block;
-    padding-bottom: 7px;
-    transition: border-bottom-width 0.1s ease-in-out, opacity 0.1s ease-in-out;
-    margin-bottom: 10px;
+  font-family: "Rampart One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.7em;
+  border-bottom: 2px solid #7d7846;
+  display: inline-block;
+  padding-bottom: 7px;
+  transition: border-bottom-width 0.1s ease-in-out, opacity 0.1s ease-in-out;
+  margin-bottom: 10px;
 }
 
 .title-font:hover {
-    border-bottom-width: 0px;
-    opacity: 0.7;
+  border-bottom-width: 0px;
+  opacity: 0.7;
 }
 
 .card-dancestudio {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
 }
 
 .btn-purple {
-    background-color: rgb(160, 141, 183);
-    color: white;
-    max-width: 90px;
+  background-color: rgb(160, 141, 183);
+  color: white;
+  width: fit-content;
 }
 
 .btn-purple:hover {
-    background-color: rgb(143, 120, 171);
+  background-color: rgb(143, 120, 171);
 }
 
 /* map */
 .custom-popup {
-    color: white;
+  color: white;
 }
 
 .custom-popup .mapboxgl-popup-content {
-    background-color: #51bbd6;
-    box-shadow: 6px 6px 6px rgba(1, 1, 1, .4);
+  background-color: #51bbd6;
+  box-shadow: 6px 6px 6px rgba(1, 1, 1, .4);
 }
 
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
-    align-self: center;
-    border-bottom: none;
-    border-top-color: #51bbd6;
+  align-self: center;
+  border-bottom: none;
+  border-top-color: #51bbd6;
 }
 
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
-    align-self: center;
-    border-top: none;
-    border-bottom-color: #51bbd6;
+  align-self: center;
+  border-top: none;
+  border-bottom-color: #51bbd6;
 }
 
 .mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
-    align-self: center;
-    border-left: none;
-    border-right-color: #51bbd6;
+  align-self: center;
+  border-left: none;
+  border-right-color: #51bbd6;
 }
 
 .mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
-    align-self: center;
-    border-right: none;
-    border-left-color: #51bbd6;
+  align-self: center;
+  border-right: none;
+  border-left-color: #51bbd6;
 }
 
 .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip {
-    align-self: flex-start;
-    border-top: none;
-    border-left: none;
-    border-bottom-color: #51bbd6;
+  align-self: flex-start;
+  border-top: none;
+  border-left: none;
+  border-bottom-color: #51bbd6;
 }
 
 .mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
-    align-self: flex-end;
-    border-top: none;
-    border-right: none;
-    border-bottom-color: #51bbd6;
+  align-self: flex-end;
+  border-top: none;
+  border-right: none;
+  border-bottom-color: #51bbd6;
 }
 
 .mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
-    align-self: flex-end;
-    border-bottom: none;
-    border-right: none;
-    border-top-color: #51bbd6;
+  align-self: flex-end;
+  border-bottom: none;
+  border-right: none;
+  border-top-color: #51bbd6;
 }
 
 .mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip {
-    align-self: flex-start;
-    border-bottom: none;
-    border-left: none;
-    border-top-color: #51bbd6;
+  align-self: flex-start;
+  border-bottom: none;
+  border-left: none;
+  border-top-color: #51bbd6;
+}
+
+
+/* review */
+.card-review {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.btn-delete {
+  background-color: rgb(176, 131, 155);
+}
+
+.btn-delete:hover {
+  background-color: rgb(176, 131, 155);
 }

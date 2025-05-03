@@ -1,5 +1,53 @@
 <% layout('layouts/boilerplate') %>
-  <h1 class="text-white">
-    <%= danceStudio.name %>
-  </h1>
-  <a href="/dancestudios">一覧へ</a>
+<div class="row">
+  <div class="col-md-6 mb-4">
+    <h1 class="text-white"><%= dancestudio.name %></h1>
+    <div class="card card-dancestudio my-3">
+      <% if(dancestudio.images && dancestudio.images.length){ %>
+        <img class="img-fluid" src="<%= dancestudio.images[0].url %>" alt="">
+      <% } %>
+      <div class="card-body">
+        <p class="card-text">
+          <small class="text-muted">
+            <%= dancestudio.location %>
+          </small>
+        </p>
+        <p class="card-text">
+          <%= dancestudio.description %>
+        </p>
+        <a href="<%= dancestudio.url %>" class="btn btn-purple fw-light mt-auto ml-3" target="_blanck">予約サイトへ</a>
+      </div>
+    </div>
+    <a href="/dancestudios" class="btn btn-purple fw-light mt-auto ml-3">一覧へ</a>
+  </div>
+  <div class="col-md-6 mb-4">
+    <section class="d-flex justify-content-between mb-3">
+      <h2 class="text-white d-inline-block">レビュー一覧</h2>
+      <a href="/dancestudios/<%= dancestudio._id %>/reviews/new" class="btn btn-purple fw-light mt-auto ml-3">レビューする</a>
+    </section>
+    <section>
+      <% for(let review of dancestudio.reviews){ %>
+        <div class="card card-review shadow w-100 my-2">
+          <div class="card-body">
+            <h3><%= review.author.username %></h3>
+            <div class="d-flex">
+              <div class="col-3">
+                <p>評価：<%= review.rating %></p>
+              </div>
+              <div class="col-9">
+                <p><%= review.text %></p>
+              </div>
+            </div>
+            <% if(currentUser && review.author.equals(currentUser._id)){ %>
+              <form action="/dancestudios/<%= dancestudio._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                <div class="d-flex">
+                  <button class="btn btn-delete ms-auto">削除する</button>
+                </div>
+              </form>
+            <% } %>
+          </div>
+        </div>
+      <% } %>
+    </section>
+  </div>
+</div>

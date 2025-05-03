@@ -10,7 +10,7 @@ router.get('/register', (req, res) => {
 router.post('/register', async (req, res) => {
   const { username, password } = req.body;
   const user = new User({ username });
-  const newuser = await User.register(user, password);
+  await User.register(user, password);
   req.flash('success', 'DanSearchへようこそ！');
   res.redirect('/dancestudios');
 });
