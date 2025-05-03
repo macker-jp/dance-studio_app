@@ -26,7 +26,8 @@ router.post('/', isLoggedIn, async (req, res) => {
 router.delete('/:reviewId', isLoggedIn, isReviewAuthor, async (req, res) => {
   const { id, reviewId } = req.params;
   await Review.findByIdAndDelete(reviewId);
-  await Dancestudio.findByIdAndUpdate(id, { $pull: { reviews: reviewId } })
+  await Dancestudio.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });
+  req.flash('success', 'レビューを削除しました！');
   res.redirect(`/dancestudios/${id}`);
 });
 
