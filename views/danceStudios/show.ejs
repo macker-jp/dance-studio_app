@@ -29,7 +29,7 @@
       <% for(let review of dancestudio.reviews){ %>
         <div class="card card-review shadow w-100 my-2">
           <div class="card-body">
-            <h3>UserName</h3>
+            <h3><%= review.author.username %></h3>
             <div class="d-flex">
               <div class="col-3">
                 <p>評価：<%= review.rating %></p>
