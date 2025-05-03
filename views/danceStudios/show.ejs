@@ -38,11 +38,13 @@
                 <p><%= review.text %></p>
               </div>
             </div>
-            <form action="/dancestudios/<%= dancestudio._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <div class="d-flex">
-                <button class="btn btn-delete ms-auto">削除する</button>
-              </div>
-            </form>
+            <% if(currentUser && review.author.equals(currentUser._id)){ %>
+              <form action="/dancestudios/<%= dancestudio._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                <div class="d-flex">
+                  <button class="btn btn-delete ms-auto">削除する</button>
+                </div>
+              </form>
+            <% } %>
           </div>
         </div>
       <% } %>
