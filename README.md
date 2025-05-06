@@ -8,4 +8,4 @@
 ・デプロイは現在vercelで行っているが、まだ開発段階で機能していない部分も多い。
 
 実際の画面
-ログイン：![スクリーンショット](images/screenshot.png)
+ログイン：![スクリーンショット](public/images/login.png)
