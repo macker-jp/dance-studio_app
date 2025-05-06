@@ -24,7 +24,7 @@ mongoose.connect(DB_URL,
 const seedDB = async () => {
     await DanceStudio.deleteMany({});
     for (let danceStudio of danceStudios) {
-        const mapurl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(danceStudio.location)}&key=AIzaSyCIPscvgiovEtRLlvJkRugqRBEPqCOvwjA`
+        const mapurl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(danceStudio.location)}&key=${process.env.GOOGLEMAP_API_KEY}`
         const res = await axios.get(mapurl);
         const data = res.data;
         if (data.status === "OK") {
