@@ -8,4 +8,8 @@
 ・デプロイは現在vercelで行っているが、まだ開発段階で機能していない部分も多い。
 
 実際の画面
+
 ログイン：![スクリーンショット](public/images/login.png)
+スタジオを探す：![スクリーンショット](public/images/home.png)
+地図：![スクリーンショット](public/images/map.png)
+スタジオ詳細：![スクリーンショット](public/images/show.png)
